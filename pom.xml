@@ -54,6 +54,11 @@
         <artifactId>spotbugs</artifactId>
         <version>4.9.8</version>
     </dependency>
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.22.1</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -77,6 +82,18 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.9.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.owasp</groupId>
+          <artifactId>dependency-check-maven</artifactId>
+          <version>12.2.0</version>
+          <executions>
+              <execution>
+                  <goals>
+                      <goal>check</goal>
+                  </goals>
+              </execution>
+          </executions>
         </plugin>
     </plugins>
 </build>
