@@ -2,9 +2,9 @@ name: Static Application Security Testing
 
 on:
   push:
-    branches: [master]
+    branches: [test-ci]
   pull_request:
-    branches: [master]
+    branches: [test-ci]
 
 jobs:
   build:
