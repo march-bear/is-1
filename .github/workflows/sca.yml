@@ -18,11 +18,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Build with maven and run OWASP checker
-        run: mvn clean install org.owasp:dependency-check-maven:check
-      - name: Upload OWASP report
-        uses: actions/upload-artifact@v4
+      - name: OWASP Dependency-Check
+        uses: dependency-check/Dependency-Check_Action@main
         with:
-          name: dependency-check-report
-          path: target/dependency-check-report.html
-          retention-days: 1
+          project: 'IS-1'
+          path: '.'
+          format: 'HTML'
