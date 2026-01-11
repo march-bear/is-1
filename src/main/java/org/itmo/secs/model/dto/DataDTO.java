@@ -1,4 +1,4 @@
-package org.itmo.secs.data.dto;
+package org.itmo.secs.model.dto;
 
 public record DataDTO(
     String title,
