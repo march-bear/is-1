@@ -26,3 +26,10 @@ jobs:
           project: 'IS-1'
           path: '.'
           format: 'HTML'
+      - name: Upload Dependency-Check reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-check-reports
+          path: |
+            dependency-check-report/
+          retention-days: 30
