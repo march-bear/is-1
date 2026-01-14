@@ -18,8 +18,12 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Build with maven and run SpotBugs
-        run: mvn clean install spotbugs:spotbugs spotbugs:gui
+      - name: Build with maven
+        run: mvn clean install
+      - name: Run SpotBugs
+        run: | 
+          mvn spotbugs:spotbugs
+          mvn spotbugs:gui
       - name: Publish SpotBugs report
         uses: jwgmeligmeyling/spotbugs-github-action@v1
         with:
