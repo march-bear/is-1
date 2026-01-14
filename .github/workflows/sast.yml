@@ -19,15 +19,15 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
       - name: Build with maven and run SpotBugs
-        run: mvn clean install spotbugs:spotbugs
+        run: mvn clean install spotbugs:spotbugs spotbugs:gui
       - name: Publish SpotBugs report
         uses: jwgmeligmeyling/spotbugs-github-action@v1
         with:
           path: '**/spotbugsXml.xml'
-      - name: Upload SpotBugs report
+      - name: Upload SpotBugs reports
         uses: actions/upload-artifact@v4
         with:
-          name: spotbugs-report
+          name: spotbugs-reports
           path: |
             **/target/spotbugs.html
             **/target/spotbugsXml.xml
