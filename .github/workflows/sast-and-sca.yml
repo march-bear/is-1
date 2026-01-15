@@ -55,6 +55,8 @@ jobs:
           path: '.'
           format: 'HTML'
           out: 'reports'
+          args: >
+            --suppression ${{github.workspace}}/dependency-check-suppress.xml
 
       - name: Upload Test results
         uses: actions/upload-artifact@master
