@@ -7,4 +7,11 @@
       <sha1>40317c3763917b061b912bd381bf8016e38eebde</sha1>
       <cve>CVE-2018-1258</cve>
    </suppress>
+   <suppress>
+      <notes><![CDATA[
+      file name: is-1-1.0.jar: spring-security-web-7.0.2.jar
+      ]]></notes>
+      <sha1>8d55b2164a866d932031b77ce21fed35a4a3bfe0</sha1>
+      <cpe>cpe:/a:pivotal_software:spring_security</cpe>
+      </suppress>
 </suppressions>
