@@ -18,15 +18,16 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Build with Maven
-        run: mvn -B verify spotbugs:spotbugs
-      - uses: jwgmeligmeyling/spotbugs-github-action@master
+      - name: Build with maven and run SpotBugs
+        run: mvn clean install spotbugs:spotbugs
+      - name: Publish SpotBugs report
+        uses: jwgmeligmeyling/spotbugs-github-action@v1
         with:
           path: '**/spotbugsXml.xml'
-      - name: Upload SpotBugs reports
+      - name: Upload SpotBugs report
         uses: actions/upload-artifact@v4
         with:
-          name: spotbugs-reports
+          name: spotbugs-report
           path: |
             **/target/spotbugs.html
             **/target/spotbugsXml.xml
