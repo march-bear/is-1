@@ -21,4 +21,11 @@
         <sha1>d15ffd7762c07248e43ee153e27362e89ff8c6b4</sha1>
         <cve>CVE-2018-1258</cve>
     </suppress>
+    <suppress>
+        <notes><![CDATA[
+        file name: is-1-1.0.jar: spring-security-crypto-7.0.2.jar
+        ]]></notes>
+        <sha1>8cec3433f111e21d6349a9788a1efcf547b8db03</sha1>
+        <cve>CVE-2018-1258</cve>
+    </suppress>
 </suppressions>
