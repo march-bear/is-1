@@ -18,18 +18,19 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
-      - name: OWASP Dependency-Check
+      - name: Build project
+        run: mvn install
+      - name: Run OWASP Dependency Check
         uses: dependency-check/Dependency-Check_Action@main
-        env:
-          JAVA_HOME: /opt/jdk
         with:
-          project: 'IS-1'
+          project: 'test'
           path: '.'
           format: 'HTML'
-      - name: Upload HTML report
-        uses: actions/upload-artifact@v4
-        if: always()
+          out: 'reports'
+
+      - name: Upload Test results
+        uses: actions/upload-artifact@master
         with:
-          name: dependency-check-html-report
-          path: /github/workspace/reports/dependency-check-report.html
-          retention-days: 30
+          name: Depcheck report v${{ matrix.node-version }}
+          path: ${{github.workspace}}/reports
+          overwrite: true
